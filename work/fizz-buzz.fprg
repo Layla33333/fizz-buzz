@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Layla Cindy Zac Royce"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-29 10:52:40 AM"/>
+        <attribute name="created" value="ZnJlZWQ7REVTS1RPUC1QRk5PRUdLOzIwMjEtMDktMjk7MDk6Mjc6MjYgQU07MjkwMw=="/>
+        <attribute name="edited" value="ZnJlZWQ7REVTS1RPUC1QRk5PRUdLOzIwMjEtMDktMjk7MTA6NTI6NDAgQU07MzsyOTk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="100" direction="inc" step="1">
+                <output expression="getFizzBuzz(i)" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="getFizzBuzz" type="String" variable="str">
+        <parameters>
+            <parameter name="value" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="str" type="String" array="False" size=""/>
+            <if expression="value % 3 == 0">
+                <then>
+                    <if expression="value % 5 == 0">
+                        <then>
+                            <assign variable="str" expression="&quot;fizzbuzz&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="str" expression="&quot;fizz&quot;"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="value % 5 == 0">
+                        <then>
+                            <assign variable="str" expression="&quot;buzz&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="str" expression="ToString(value)"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
