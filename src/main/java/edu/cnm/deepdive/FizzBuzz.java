@@ -12,13 +12,13 @@ public class FizzBuzz {
         str = "Fizz";
       }
 
-    } else {
+    } else
       if (value % 5 == 0) {
         str = "Buzz";
       } else {
         str = String.valueOf(value);
       }
-    }
+
     return str;
 
   }
