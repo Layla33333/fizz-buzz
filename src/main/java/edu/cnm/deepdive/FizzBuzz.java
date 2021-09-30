@@ -1,14 +1,14 @@
 package edu.cnm.deepdive;
 
+import java.util.EnumSet;
+
 /**
  * Implements a method that computes the FizzBuzz {@link String} for any non-negative integer. This
  * implementation ignores the common form of the FizzBuzz challenge
  */
 public class FizzBuzz {
 
-  static final String FIZZ_BUZZ_VALUE = "FizzBuzz";
-  static final String FIZZ_VALUE = "Fizz";
-  static final String BUZZ_VALUE = "Buzz";
+
 
   /**
    * Computes and returns,{@link String} FizzBuzz value for a specified non-negative integer. Return
@@ -18,23 +18,18 @@ public class FizzBuzz {
    * @param value
    * @return
    */
-  public String getFizzBuzz(int value) {
-    String str;
-
+  public EnumSet<FizzBuzzValue> getFizzBuzz(int value) {
+    EnumSet<FizzBuzzValue> valueSet = EnumSet.noneOf(FizzBuzzValue.class);
+    // TODO Put appropriate values in valueSet, based on whether a value is divisible by 3 or 5.
     if (value % 3 == 0) {
-      if (value % 5 == 0) {
-        str = FIZZ_BUZZ_VALUE;
-      } else {
-        str = FIZZ_VALUE;
-      }
-
-    } else if (value % 5 == 0) {
-      str = BUZZ_VALUE;
-    } else {
-      str = String.valueOf(value);
+      valueSet.add(FizzBuzzValue.FIZZ);
+      return valueSet;
+    }
+    if (value % 5 == 0) {
+      valueSet.add(FizzBuzzValue.BUZZ);
     }
 
-    return str;
+    return valueSet;
 
   }
 
