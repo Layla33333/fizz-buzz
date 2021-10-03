@@ -2,6 +2,7 @@ package edu.cnm.deepdive;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.EnumSet;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ class FizzBuzzTest {
   void getFizzBuzz_fizz() {
     FizzBuzz fb = new FizzBuzz();
     for (int value : fizzValues) {
-      assertEquals(FizzBuzz.FIZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(EnumSet.of(FizzBuzzValue.FIZZ), fb.getFizzBuzz(value));
     }
 
   }
@@ -28,7 +29,7 @@ class FizzBuzzTest {
   void getFizzBuzz_buzz() {
     FizzBuzz fb = new FizzBuzz();
     for (int value : buzzValues) {
-      assertEquals(FizzBuzz.BUZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(EnumSet.of(FizzBuzzValue.BUZZ), fb.getFizzBuzz(value));
     }
 
   }
@@ -38,7 +39,7 @@ class FizzBuzzTest {
   void getFizzBuzz_fizzBuzz() {
     FizzBuzz fb = new FizzBuzz();
     for (int value : fizzBuzzValues) {
-      assertEquals(FizzBuzz.FIZZ_BUZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(EnumSet.of(FizzBuzzValue.FIZZ,FizzBuzzValue.BUZZ), fb.getFizzBuzz(value));
     }
 
   }
@@ -48,7 +49,7 @@ class FizzBuzzTest {
   void getFizzBuzz_neither(){
     FizzBuzz fb = new FizzBuzz();
     for (int value : neitherValues){
-      assertEquals(String.valueOf(value), fb.getFizzBuzz(value));
+      assertEquals(EnumSet.noneOf(FizzBuzzValue.class), fb.getFizzBuzz(value));
     }
   }
 }

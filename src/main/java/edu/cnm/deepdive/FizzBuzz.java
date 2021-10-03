@@ -23,7 +23,6 @@ public class FizzBuzz {
     // TODO Put appropriate values in valueSet, based on whether a value is divisible by 3 or 5.
     if (value % 3 == 0) {
       valueSet.add(FizzBuzzValue.FIZZ);
-      return valueSet;
     }
     if (value % 5 == 0) {
       valueSet.add(FizzBuzzValue.BUZZ);
